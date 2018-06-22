@@ -2,16 +2,30 @@ import React, { Component } from 'react';
 import FacebookLogin from './faceBookLoginButton';
 
 class Login extends Component {
+constructor(props){
 
-  state = {
+  super(props);
+  this.state = {
     username: null
-  };
+  }
+
+  this.goto = this.goto.bind(this)
+  }
+
+  goto = (page) => {
+    console.log(this.props)
+    this.props.history.push(page)
+  }
+
+
 
   onFacebookLogin = (loginStatus, resultObject) => {
     if (loginStatus === true) {
       this.setState({
         username: resultObject.user.name
       });
+      this.goto('/dashboard');
+      console.log('resul', resultObject);
     } else {
       alert('Facebook login error');
     }
@@ -31,27 +45,7 @@ class Login extends Component {
                </FacebookLogin>
         </div>
       } {
-        username &&
-        <div>
-        <p> Welcome back, {username}</p>
-
-        <form className="form-inline" action="/action_page.php">
-         <div class="form-group">
-           <label for="email">Email address:</label>
-           <input type="email" class="form-control" id="email" />
-         </div>
-         <div class="form-group">
-           <label for="pwd">Password:</label>
-           <input type="password" class="form-control" id="pwd" />
-         </div>
-         <div class="checkbox">
-           <label><input type="checkbox" /> Remember me</label>
-         </div>
-         <button type="submit" class="btn btn-default">Submit</button>
-        </form>
-
-        </div>
-
+        username
 
       }
       </div>
