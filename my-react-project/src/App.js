@@ -32,7 +32,7 @@ class App extends Component {
         <Header />
           <div class="content">
             <Route exact path='/' component={Homepage} />
-            <Route exact path='/login' component={Login} />
+            <Route path='/login' component={Login} />
           </div>
         <Footer />
       </div>
