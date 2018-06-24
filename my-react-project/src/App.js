@@ -11,13 +11,14 @@ import Footer from './components/footerComponents/footer'
 import Homepage from './components/pages/homepage'
 import About from './components/pages/about'
 import Login from './components/pages/login'
+import Dashboard from './components/pages/Dashboard'
 
 //includes
 // Bootstrap core CSS
 import "./vendor/bootstrap/css/bootstrap.min.css"
 
 //custom css for the page.
-import './assets/css/new-age.min.css'
+import './assets/css/new-age.css'
 
 // custom fonts for the page.
 import "./vendor/font-awesome/css/font-awesome.min.css"
@@ -32,7 +33,8 @@ class App extends Component {
         <Header />
           <div class="content">
             <Route exact path='/' component={Homepage} />
-            <Route path='/login' component={Login} />
+            <Route exact path='/login' component={Login} />
+            <Route exact path = '/dashboard' component={Dashboard} />
           </div>
         <Footer />
       </div>

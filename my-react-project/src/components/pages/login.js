@@ -66,6 +66,7 @@ export default class Login extends Component {
     return (
       <div className="" style={{marginTop: '60px'}}>
         <button onClick={this.handleFbLogin}>Firebase Facebook</button>
+
       </div>
     );
   }
