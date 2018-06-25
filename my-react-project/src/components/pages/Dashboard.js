@@ -24,14 +24,14 @@ class Dashboard extends Component {
     }
 
     componentWillMount(){
-      db.ref(`posts/${this.state.user}`).on('value')
+      db.ref(`posts/${this.state.user}`).once('value')
         .then(snapshot => {
 
         })
     }
 
     handleSubmit(event) {
-    
+
       event.preventDefault();
       console.log('this.state', this.state);
 
@@ -65,29 +65,29 @@ class Dashboard extends Component {
       <div class="row">
         <div class="form-group">
           <label for="courseName">Course Name</label>
-          <input 
-            type="text" 
-            class="form-control" 
-            id="courseName" 
-            placeholder="Artificial Intelligence"  
+          <input
+            type="text"
+            class="form-control"
+            id="courseName"
+            placeholder="Artificial Intelligence"
             onChange={this.handleInputChange('courseName')} />
         </div>
 
           <div class="form-group">
           <label for="courseName">Course Name</label>
-          <input 
-            type="text" 
-            class="form-control" 
-            id="courseName" 
-            placeholder="Artificial Intelligence"  
+          <input
+            type="text"
+            class="form-control"
+            id="courseName"
+            placeholder="Artificial Intelligence"
             onChange={this.handleInputChange('description')} />
         </div>
         <div class="form-group">
           <label for="endTime">End Time </label>
-          <input 
-          type="time" 
-          class="form-control" 
-          id="endTime" 
+          <input
+          type="time"
+          class="form-control"
+          id="endTime"
           onChange={this.handleInputChange('endTime')} />
         </div>
         <div class="form-group">

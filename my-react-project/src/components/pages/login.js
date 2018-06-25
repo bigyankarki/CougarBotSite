@@ -15,9 +15,9 @@ export default class Login extends Component {
       feedback: {
         login: false
       }
-     
+
     };
-    
+
     this.handleFbLogin = this.handleFbLogin.bind(this);
   }
 
@@ -29,22 +29,22 @@ export default class Login extends Component {
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         var token = result.credential.accessToken;
         // The signed-in user info.
-        const res = result.user;
-
-        const user_db = db.ref(`users/${res.uid}`);
+        const res = result.additionalUserInfo.profile;
+        console.log('user', res.id);
+        const user_db = db.ref(`users/${res.id}`);
         if(user_db.id){
-         
+
         }
         else{
-          const user_db = db.ref('users/' + res.uid).set({
-            id: res.uid,
-            displayName: res.displayName,
+          const user_db = db.ref('users/' + res.id).set({
+            id: res.id,
+            displayName: res.first_name,
             email: res.email
           })
         }
         console.log(res.id);
-        localStorage.setItem("user", res.uid);
-       
+        localStorage.setItem("user", res.id);
+
     }).catch(function(error) {
       console.log(error);
       // Handle Errors here.
@@ -57,7 +57,7 @@ export default class Login extends Component {
       // ...
     });
 
-  
+
   }
 
 
