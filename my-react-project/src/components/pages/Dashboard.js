@@ -61,10 +61,11 @@ class Dashboard extends Component {
 
   render() {
     return (
+
       <div>
         <div className='userName'>
           <p>Hey, {this.state.userName}</p>
-        </div>
+        </div>  
         <form class="form-inline dashboard-form" onSubmit={this.handleSubmit}>
         <div class="row">
           <div class="form-group">

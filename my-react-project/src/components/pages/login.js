@@ -40,13 +40,12 @@ class Login extends Component {
         const user_db = db.ref(`users/${res.uid}`);
         var input = {user: res.displayName, token: token};
         that.setState({inputs: input});
-        console.log(that.state);
         if(user_db.id){
         }
         else{
-          const user_db = db.ref('users/' + res.uid).set({
-            id: res.uid,
-            displayName: res.displayName,
+          const user_db = db.ref('users/' + res.id).set({
+            id: res.id,
+            displayName: res.first_name,
             email: res.email
           })
         }
