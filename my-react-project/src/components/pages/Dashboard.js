@@ -10,7 +10,7 @@ class Dashboard extends Component {
       inputs: {
         courseName: '',
         description: '',
-        day: [],
+        day: '',
         endTime: '',
       },
       feedback: {
@@ -23,7 +23,6 @@ class Dashboard extends Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this. handleSelectChange = this.handleSelectChange.bind(this);
     }
 
     componentWillMount(){
@@ -58,20 +57,6 @@ class Dashboard extends Component {
           inputs: Object.assign({}, this.state.inputs, {[input]: e.target.value})
         })
       };
-    }
-
-    handleSelectChange(day){
-      let selected = [...this.refs.days]
-      .filter(option => option.selected)
-      .map(option => option.value);
-
-      const {courseName, description, endTime} = this.state.inputs;
-
-      var input = {courseName, description, day: selected, endTime }
-
-      this.setState({inputs: input })
-
-      console.log(this.state.inputs)
     }
 
   render() {
@@ -111,7 +96,7 @@ class Dashboard extends Component {
           </div>
           <div className="form-group">
             <label htmlFor="days">Day</label>
-            <select multiple={true} className="form-control" ref="days" onChange= {this.handleSelectChange}>
+            <select multiple={true} className="form-control" ref="days" onChange= {this.handleInputChange('day')}>
                 <option value="Monday">Monday</option>
                 <option selected value="Tuesday">Tuesday</option>
                 <option value="Wednesday">Wednesday</option>
