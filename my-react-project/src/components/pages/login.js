@@ -3,26 +3,33 @@ import FacebookLogin from './faceBookLoginButton';
 import { db } from '../../config/firebase';
 import * as firebase from 'firebase';
 
-export default class Login extends Component {
+class Login extends Component {
 
   constructor(props){
     super(props);
 
     this.state = {
       inputs: {
-        //username: null,
+        user: '',
+        token: ''
       },
       feedback: {
         login: false
       }
-     
+
     };
-    
+
     this.handleFbLogin = this.handleFbLogin.bind(this);
+    this.goto = this.goto.bind(this);
   }
 
+  goto = (page) => {
+    console.log(this.props)
+    this.props.history.push(page)
+  }
 
   handleFbLogin() {
+    var that = this;
     let provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider)
       .then(function(result) {
@@ -30,10 +37,11 @@ export default class Login extends Component {
         var token = result.credential.accessToken;
         // The signed-in user info.
         const res = result.user;
-
         const user_db = db.ref(`users/${res.uid}`);
+        var input = {user: res.displayName, token: token};
+        that.setState({inputs: input});
+        console.log(that.state);
         if(user_db.id){
-         
         }
         else{
           const user_db = db.ref('users/' + res.uid).set({
@@ -44,7 +52,8 @@ export default class Login extends Component {
         }
         console.log(res.id);
         localStorage.setItem("user", res.uid);
-       
+        localStorage.setItem("userName", res.displayName);
+        that.goto('/dashboard');
     }).catch(function(error) {
       console.log(error);
       // Handle Errors here.
@@ -57,7 +66,7 @@ export default class Login extends Component {
       // ...
     });
 
-  
+
   }
 
 
@@ -71,3 +80,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default Login;
