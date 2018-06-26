@@ -3,14 +3,15 @@ import FacebookLogin from './faceBookLoginButton';
 import { db } from '../../config/firebase';
 import * as firebase from 'firebase';
 
-export default class Login extends Component {
+class Login extends Component {
 
   constructor(props){
     super(props);
 
     this.state = {
       inputs: {
-        //username: null,
+        user: '',
+        token: ''
       },
       feedback: {
         login: false
@@ -19,21 +20,27 @@ export default class Login extends Component {
     };
 
     this.handleFbLogin = this.handleFbLogin.bind(this);
+    this.goto = this.goto.bind(this);
   }
 
+  goto = (page) => {
+    console.log(this.props)
+    this.props.history.push(page)
+  }
 
   handleFbLogin() {
+    var that = this;
     let provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider)
       .then(function(result) {
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         var token = result.credential.accessToken;
         // The signed-in user info.
-        const res = result.additionalUserInfo.profile;
-        console.log('user', res.id);
-        const user_db = db.ref(`users/${res.id}`);
+        const res = result.user;
+        const user_db = db.ref(`users/${res.uid}`);
+        var input = {user: res.displayName, token: token};
+        that.setState({inputs: input});
         if(user_db.id){
-
         }
         else{
           const user_db = db.ref('users/' + res.id).set({
@@ -43,8 +50,9 @@ export default class Login extends Component {
           })
         }
         console.log(res.id);
-        localStorage.setItem("user", res.id);
-
+        localStorage.setItem("user", res.uid);
+        localStorage.setItem("userName", res.displayName);
+        that.goto('/dashboard');
     }).catch(function(error) {
       console.log(error);
       // Handle Errors here.
@@ -71,3 +79,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default Login;
