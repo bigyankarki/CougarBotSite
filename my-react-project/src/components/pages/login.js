@@ -24,8 +24,7 @@ class Login extends Component {
   }
 
   goto = (page) => {
-    console.log(this.props)
-    this.props.history.push(page)
+    this.props.history.push(page);
   }
 
   handleFbLogin() {

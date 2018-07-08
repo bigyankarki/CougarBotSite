@@ -10,7 +10,7 @@ class Dashboard extends Component {
       inputs: {
         courseName: '',
         description: '',
-        day: '',
+        day: [],
         endTime: '',
       },
       feedback: {
@@ -23,6 +23,7 @@ class Dashboard extends Component {
 
     this.handleInputChange = this.handleInputChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleSelectChange = this.handleSelectChange.bind(this);
     }
 
     componentWillMount(){
@@ -59,54 +60,82 @@ class Dashboard extends Component {
       };
     }
 
+    handleSelectChange(event){
+      event.preventDefault();
+      var options = event.target.value;
+      var days = this.state.inputs.day;
+      if(!days.includes(options)){
+        days.push(options);
+      }
+      else if(days.includes(options)){
+        for(var i=0;i<days.length;i++){
+          if(days[i] === options){
+            days.splice(i,1);
+          }
+        }
+      }
+      this.setState({day:days});
+      console.log(this.state.inputs.day);
+    }
+
+    displayChosen(){
+      for(var i=0;i<this.state.inputs.day.length;i++){
+        return <div> <p> {this.state.inputs.day} </p> </div>
+      }
+    }
+
   render() {
     return (
 
       <div>
         <div className='userName'>
           <p>Hey, {this.state.userName}</p>
-        </div>  
-        <form class="form-inline dashboard-form" onSubmit={this.handleSubmit}>
-        <div class="row">
-          <div class="form-group">
-            <label for="courseName">Course Name</label>
+        </div>
+        <form className="form-group dashboard-form" onSubmit={this.handleSubmit}>
+        <div className="row">
+          <div className="form-group">
+            <label htmlFor="courseName">Course Name</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="courseName"
               placeholder="Artificial Intelligence"
               onChange={this.handleInputChange('courseName')} />
           </div>
 
-            <div class="form-group">
-            <label for="courseName">Course Name</label>
+            <div className="form-group">
+            <label htmlFor="courseName">Course Name</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="courseName"
               placeholder="Artificial Intelligence"
               onChange={this.handleInputChange('description')} />
           </div>
-          <div class="form-group">
-            <label for="endTime">End Time </label>
+          <div className="form-group">
+            <label htmlFor="endTime">End Time </label>
             <input
             type="time"
-            class="form-control"
+            className="form-control"
             id="endTime"
             onChange={this.handleInputChange('endTime')} />
           </div>
           <div className="form-group">
             <label htmlFor="days">Day</label>
-            <select multiple={true} className="form-control" ref="days" onChange= {this.handleInputChange('day')}>
+            <select value = {this.state.inputs.day} className="form-control" ref="days" id="hero" onChange= {this.handleSelectChange}>
                 <option value="Monday">Monday</option>
-                <option selected value="Tuesday">Tuesday</option>
+                <option value="Tuesday">Tuesday</option>
                 <option value="Wednesday">Wednesday</option>
                 <option value="Thursday">Thursday</option>
                 <option value="Friday">Friday</option>
             </select>
+            <div>
             </div>
             </div>
+            </div>
+            <div>
               <button type="submit" className="btn btn-primary" value="Submit">Submit</button>
+            </div>
           </form>
         </div>
     );
