@@ -65,33 +65,33 @@ class Dashboard extends Component {
       <div>
         <div className='userName'>
           <p>Hey, {this.state.userName}</p>
-        </div>  
-        <form class="form-inline dashboard-form" onSubmit={this.handleSubmit}>
-        <div class="row">
-          <div class="form-group">
+        </div>
+        <form className="form-group dashboard-form" onSubmit={this.handleSubmit}>
+        <div className="row">
+          <div className="form-group">
             <label for="courseName">Course Name</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="courseName"
               placeholder="Artificial Intelligence"
               onChange={this.handleInputChange('courseName')} />
           </div>
 
-            <div class="form-group">
+            <div className="form-group">
             <label for="courseName">Course Name</label>
             <input
               type="text"
-              class="form-control"
+              className="form-control"
               id="courseName"
               placeholder="Artificial Intelligence"
               onChange={this.handleInputChange('description')} />
           </div>
-          <div class="form-group">
+          <div className="form-group">
             <label for="endTime">End Time </label>
             <input
             type="time"
-            class="form-control"
+            className="form-control"
             id="endTime"
             onChange={this.handleInputChange('endTime')} />
           </div>

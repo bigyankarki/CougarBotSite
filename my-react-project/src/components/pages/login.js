@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import FacebookLogin from './faceBookLoginButton';
 import { db } from '../../config/firebase';
 import * as firebase from 'firebase';
 

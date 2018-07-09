@@ -4,16 +4,16 @@ class Footer extends Component {
   render() {
     return (
       <footer>
-      <div class="container">
+      <div className="container">
         <p>&copy; www.cougarbot.com  2018. All Rights Reserved.</p>
-        <ul class="list-inline">
-          <li class="list-inline-item">
+        <ul className="list-inline">
+          <li className="list-inline-item">
             <a href="#">Privacy</a>
           </li>
-          <li class="list-inline-item">
+          <li className="list-inline-item">
             <a href="#">Terms</a>
           </li>
-          <li class="list-inline-item">
+          <li className="list-inline-item">
             <a href="#">FAQ</a>
           </li>
         </ul>
