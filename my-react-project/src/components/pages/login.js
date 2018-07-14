@@ -35,9 +35,9 @@ class Login extends Component {
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         var token = result.credential.accessToken;
         // The signed-in user info.
-        const res = result.user;
-        const user_db = db.ref(`users/${res.uid}`);
-        var input = {user: res.displayName, token: token};
+        const res = result.additionalUserInfo.profile;
+        const user_db = db.ref(`users/${res.id}`);
+        var input = {user: res.first_name, token: token};
         that.setState({inputs: input});
         if(user_db.id){
         }
@@ -48,9 +48,9 @@ class Login extends Component {
             email: res.email
           })
         }
-        console.log(res.id);
-        localStorage.setItem("user", res.uid);
-        localStorage.setItem("userName", res.displayName);
+
+        localStorage.setItem("user", res.id);
+        localStorage.setItem("userName", res.first_name);
         that.goto('/dashboard');
     }).catch(function(error) {
       console.log(error);
