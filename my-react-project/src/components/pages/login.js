@@ -71,10 +71,12 @@ class Login extends Component {
   render() {
     const { username } = this.state;
     return (
-      <div className="" style={{marginTop: '60px'}}>
-        <button onClick={this.handleFbLogin}>Firebase Facebook</button>
-
+      <section className="login bg-primary text-center container" id="login">
+      <h2>Facebook login allows you to use homework feature of the bot. Click the button below to login.</h2>
+      <div style={{marginTop: '17%'}}>
+        <button className="btn btn-outline btn-xl" onClick={this.handleFbLogin}><i className="icon-social-facebook"></i>Facebook Login</button>
       </div>
+      </section>
     );
   }
 }

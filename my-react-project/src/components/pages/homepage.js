@@ -16,7 +16,7 @@ class Homepage extends Component {
           <div className="col-lg-7 my-auto">
             <div className="header-content mx-auto">
               <h1 className="mb-5">Caldwell University Smart Assistant. The solution to your ever existing college problems. Come, say hi to CougarBot.</h1>
-              <a href="https://m.me/CUcougarbot" className="btn btn-outline btn-xl js-scroll-trigger">Say hi to CougarBot</a>
+              <a href="https://m.me/CUcougarbot" className="btn btn-outline btn-xl">Say hi to CougarBot</a>
             </div>
           </div>
           <div className="col-lg-5 my-auto">
@@ -52,41 +52,49 @@ class Homepage extends Component {
           <div className="row">
           <div className="col-md-3">
             <div className="card">
+            <a href="http://www.bigyankarki.com" target="_blank">
               <img className="card-img-top" src={founder1} alt="Card image cap" />
               <div className="card-body">
                 <h4>Bigyan Karki</h4>
                 <p className="card-text">Co-founder, full stack developer, AI/ML enthusiast</p>
               </div>
+            </a>
             </div>
           </div>
 
           <div className="col-md-3">
             <div className="card">
+            <a href="https://raashul.github.io/portfolio-app/" target="_blank">
               <img className="card-img-top" src={founder3} alt="Card image cap" />
               <div className="card-body">
                 <h4>Rashul Rajbhandari</h4>
                 <p className="card-text">Co-founder, full stack developer, Backend engineer</p>
               </div>
+            </a>
             </div>
           </div>
 
           <div className="col-md-3">
             <div className="card">
+            <a href="https://www.github.com/dahalaamosh" target="_blank">
               <img className="card-img-top" src={founder4} alt="Card image cap" />
               <div className="card-body">
                 <h4>Aamosh Dahal</h4>
                 <p className="card-text">Co-founder, full stack developer, Backend developer</p>
               </div>
+            </a>
             </div>
           </div>
 
           <div className="col-md-3">
             <div className="card">
+            <a href="https://github.com/madhusujan" target="_blank">
               <img className="card-img-top" src={founder2} alt="Card image cap" />
               <div className="card-body">
                 <h4>Madhu Paudel</h4>
                 <p className="card-text">Co-founder, Front end developer, AI/ML enthusiast</p>
               </div>
+            </a>
             </div>
           </div>
 
