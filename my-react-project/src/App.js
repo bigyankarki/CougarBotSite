@@ -9,9 +9,12 @@ import {
 import Header from './components/headerComponents/header'
 import Footer from './components/footerComponents/footer'
 import Homepage from './components/pages/homepage'
-import About from './components/pages/about'
 import Login from './components/pages/login'
 import Dashboard from './components/pages/Dashboard'
+import Privacy from './components/pages/privacy'
+import Terms from './components/pages/terms'
+import Faqs from './components/pages/faqs'
+
 
 //includes
 // Bootstrap core CSS
@@ -38,8 +41,8 @@ class App extends Component {
             <Route exact path='/login' component={Login} />
             <Route exact path = '/dashboard' component={Dashboard} />
             <Route exact path = '/privacy' component={Privacy} />
-            <Route exact path = '/terms' component={Dashboard} />
-            <Route exact path = '/faqs' component={Dashboard} />
+            <Route exact path = '/terms' component={Terms} />
+            <Route exact path = '/faqs' component={Faqs} />
           </div>
         <Footer />
       </div>
