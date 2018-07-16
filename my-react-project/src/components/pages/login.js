@@ -1,55 +1,50 @@
 import React, { Component } from 'react';
+import FacebookLogin from './faceBookLoginButton';
 import { db } from '../../config/firebase';
 import * as firebase from 'firebase';
 
-class Login extends Component {
+export default class Login extends Component {
 
   constructor(props){
     super(props);
 
     this.state = {
       inputs: {
-        user: '',
-        token: ''
+        //username: null,
       },
       feedback: {
         login: false
       }
+     
     };
-
+    
     this.handleFbLogin = this.handleFbLogin.bind(this);
-    this.goto = this.goto.bind(this);
   }
 
-  goto = (page) => {
-    this.props.history.push(page)
-  }
 
   handleFbLogin() {
-    var that = this;
     let provider = new firebase.auth.FacebookAuthProvider();
     firebase.auth().signInWithPopup(provider)
       .then(function(result) {
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         var token = result.credential.accessToken;
         // The signed-in user info.
-        const res = result.additionalUserInfo.profile;
-        const user_db = db.ref(`users/${res.id}`);
-        var input = {user: res.first_name, token: token};
-        that.setState({inputs: input, feedback: true});
+        const res = result.user;
+
+        const user_db = db.ref(`users/${res.uid}`);
         if(user_db.id){
+         
         }
         else{
-          const user_db = db.ref('users/' + res.id).set({
-            id: res.id,
-            displayName: res.first_name,
+          const user_db = db.ref('users/' + res.uid).set({
+            id: res.uid,
+            displayName: res.displayName,
             email: res.email
           })
         }
-
-        localStorage.setItem("user", res.id);
-        localStorage.setItem("userName", res.first_name);
-        that.goto('/dashboard');
+        console.log(res.id);
+        localStorage.setItem("user", res.uid);
+       
     }).catch(function(error) {
       console.log(error);
       // Handle Errors here.
@@ -61,19 +56,18 @@ class Login extends Component {
       var credential = error.credential;
       // ...
     });
+
+  
   }
+
 
   render() {
     const { username } = this.state;
     return (
-      <section className="login bg-primary text-center container" id="login">
-      <h2>Facebook login allows you to use homework feature of the bot. Click the button below to login.</h2>
-      <div style={{marginTop: '17%'}}>
-        <button className="btn btn-outline btn-xl" onClick={this.handleFbLogin}><i className="icon-social-facebook"></i>Facebook Login</button>
+      <div className="" style={{marginTop: '60px'}}>
+        <button onClick={this.handleFbLogin}>Firebase Facebook</button>
+
       </div>
-      </section>
     );
   }
 }
-
-export default Login;
