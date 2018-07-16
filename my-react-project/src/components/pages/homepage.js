@@ -8,6 +8,7 @@ import founder4 from '../../assets/img/founder4.jpg'
 
 class Homepage extends Component {
   render() {
+
     return (
       <div>
       <header className="masthead">

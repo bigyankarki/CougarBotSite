@@ -5,7 +5,15 @@ import Login from '../pages/login.js'
 import SignIn from './SignIn'
 import SignOut from './SignOut.js'
 
+import { getUser } from '../authContext';
+
+
 class Header extends Component {
+
+  constructor(props){
+    super(props);
+  }
+
   render() {
     return (
       <nav className="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
@@ -23,7 +31,7 @@ class Header extends Component {
             <li className="nav-item">
               <a className="nav-link js-scroll-trigger" href="/#features">Features</a>
             </li>
-            <SignIn />
+            {localStorage.getItem('user') ? <SignOut /> : <SignIn /> }
           </ul>
         </div>
       </div>
