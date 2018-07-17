@@ -25,13 +25,13 @@ class Header extends Component {
             <li className="nav-item">
               <a className="nav-link js-scroll-trigger" href="/#features">Features</a>
             </li>
-            {isLoggedIn == true ?
+            {isLoggedIn() == true ?
               <li className="nav-item">
                 <a className="nav-link js-scroll-trigger" href="/dashboard">Dashboard</a>
               </li> : null
             }
 
-            {isLoggedIn == true ? <SignOut /> : <SignIn />}
+            {isLoggedIn() == true ? <SignOut /> : <SignIn />}
 
           </ul>
         </div>
