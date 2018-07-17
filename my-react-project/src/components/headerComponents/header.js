@@ -5,6 +5,8 @@ import Login from '../pages/login.js'
 import SignIn from './SignIn'
 import SignOut from './SignOut.js'
 
+import {isLoggedIn} from '../../auth';
+
 class Header extends Component {
   render() {
     return (
@@ -23,7 +25,14 @@ class Header extends Component {
             <li className="nav-item">
               <a className="nav-link js-scroll-trigger" href="/#features">Features</a>
             </li>
-            <SignIn />
+            {isLoggedIn == true ?
+              <li className="nav-item">
+                <a className="nav-link js-scroll-trigger" href="/dashboard">Dashboard</a>
+              </li> : null
+            }
+
+            {isLoggedIn == true ? <SignOut /> : <SignIn />}
+
           </ul>
         </div>
       </div>
