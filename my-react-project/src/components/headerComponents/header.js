@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
+import Login from '../pages/login.js'
+
+import SignIn from './SignIn'
+import SignOut from './SignOut.js'
 
 class Header extends Component {
   render() {
@@ -19,9 +23,7 @@ class Header extends Component {
             <li className="nav-item">
               <a className="nav-link js-scroll-trigger" href="/features">Features</a>
             </li>
-            <li className="nav-item">
-              <a className="nav-link js-scroll-trigger" href="/login">Sign in</a>
-            </li>
+            {localStorage.getItem('user') ? <SignOut /> : <SignIn />}
           </ul>
         </div>
       </div>

@@ -16,7 +16,6 @@ class Login extends Component {
       feedback: {
         login: false
       }
-
     };
 
     this.handleFbLogin = this.handleFbLogin.bind(this);
@@ -24,7 +23,11 @@ class Login extends Component {
   }
 
   goto = (page) => {
+<<<<<<< Updated upstream
     this.props.history.push(page);
+=======
+    this.props.history.push(page)
+>>>>>>> Stashed changes
   }
 
   handleFbLogin() {
@@ -35,10 +38,17 @@ class Login extends Component {
         // This gives you a Facebook Access Token. You can use it to access the Facebook API.
         var token = result.credential.accessToken;
         // The signed-in user info.
+<<<<<<< Updated upstream
         const res = result.user;
         const user_db = db.ref(`users/${res.uid}`);
         var input = {user: res.displayName, token: token};
         that.setState({inputs: input});
+=======
+        const res = result.additionalUserInfo.profile;
+        const user_db = db.ref(`users/${res.id}`);
+        var input = {user: res.first_name, token: token};
+        that.setState({inputs: input, feedback: true});
+>>>>>>> Stashed changes
         if(user_db.id){
         }
         else{
@@ -63,10 +73,7 @@ class Login extends Component {
       var credential = error.credential;
       // ...
     });
-
-
   }
-
 
   render() {
     const { username } = this.state;
