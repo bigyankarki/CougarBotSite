@@ -6,6 +6,7 @@ class SignOut extends Component {
     return (
       <li className="nav-item">
         <a className="nav-link js-scroll-trigger" onClick ={logout} href="/">Sign out</a>
+
       </li>
     );
   }

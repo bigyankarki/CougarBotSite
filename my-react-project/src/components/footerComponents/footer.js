@@ -8,13 +8,13 @@ class Footer extends Component {
         <p>&copy; www.cougarbot.com  2018. All Rights Reserved.</p>
         <ul className="list-inline">
           <li className="list-inline-item">
-            <a href="/privacy">Privacy</a>
+            <a href="#">Privacy</a>
           </li>
           <li className="list-inline-item">
-            <a href="/terms">Terms</a>
+            <a href="#">Terms</a>
           </li>
           <li className="list-inline-item">
-            <a href="/faqs">FAQ</a>
+            <a href="#">FAQ</a>
           </li>
         </ul>
       </div>

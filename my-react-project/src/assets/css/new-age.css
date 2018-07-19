@@ -340,7 +340,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 form {
   margin: auto;
   margin-top: 5%;
-  width: 60%;
+  width: 80%;
 }
 
 form div {
@@ -349,4 +349,8 @@ form div {
 
 form button {
   margin-left:30%;
+}
+
+.selectedDayText{
+  color: red;
 }

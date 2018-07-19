@@ -32,7 +32,6 @@ class Header extends Component {
             }
 
             {isLoggedIn() == true ? <SignOut /> : <SignIn />}
-
           </ul>
         </div>
       </div>
