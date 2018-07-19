@@ -7,18 +7,6 @@ class Dashboard extends Component {
     super(props);
 
     this.state = {
-<<<<<<< Updated upstream
-      inputs: {
-        courseName: '',
-        description: '',
-        day: [],
-        endTime: '',
-      },
-      feedback: {
-        courseName: '',
-        endTime: '',
-      },
-=======
         courses: [
           {
           courseName: '',
@@ -26,7 +14,6 @@ class Dashboard extends Component {
           endTime: ''
         }
       ],
->>>>>>> Stashed changes
       user: localStorage.getItem('user'),
       userName: localStorage.getItem("userName")
     }
@@ -106,32 +93,6 @@ class Dashboard extends Component {
     });
     }
 
-<<<<<<< Updated upstream
-    handleSelectChange(event){
-      event.preventDefault();
-      var options = event.target.value;
-      var days = this.state.inputs.day;
-      if(!days.includes(options)){
-        days.push(options);
-      }
-      else if(days.includes(options)){
-        for(var i=0;i<days.length;i++){
-          if(days[i] === options){
-            days.splice(i,1);
-          }
-        }
-      }
-      this.setState({day:days});
-      console.log(this.state.inputs.day);
-    }
-
-    displayChosen(){
-      for(var i=0;i<this.state.inputs.day.length;i++){
-        return <div> <p> {this.state.inputs.day} </p> </div>
-      }
-    }
-
-=======
     handleRemoveCourse = (idx) => () => {
       if (idx > 0){
         this.setState({
@@ -140,60 +101,12 @@ class Dashboard extends Component {
       }
 
   }
->>>>>>> Stashed changes
   render() {
     return (
       <section className="container bg-primary">
       <h1>Welcome, {this.state.userName}.</h1>
       <p>Please fill the form to the best of your knowledge. </p>
-
         <form className="form-group dashboard-form" onSubmit={this.handleSubmit}>
-<<<<<<< Updated upstream
-        <div className="row">
-          <div className="form-group">
-            <label htmlFor="courseName">Course Name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="courseName"
-              placeholder="Artificial Intelligence"
-              onChange={this.handleInputChange('courseName')} />
-          </div>
-
-            <div className="form-group">
-            <label htmlFor="courseName">Course Name</label>
-            <input
-              type="text"
-              className="form-control"
-              id="courseName"
-              placeholder="Artificial Intelligence"
-              onChange={this.handleInputChange('description')} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="endTime">End Time </label>
-            <input
-            type="time"
-            className="form-control"
-            id="endTime"
-            onChange={this.handleInputChange('endTime')} />
-          </div>
-          <div className="form-group">
-            <label htmlFor="days">Day</label>
-            <select value = {this.state.inputs.day} className="form-control" ref="days" id="hero" onChange= {this.handleSelectChange}>
-                <option value="Monday">Monday</option>
-                <option value="Tuesday">Tuesday</option>
-                <option value="Wednesday">Wednesday</option>
-                <option value="Thursday">Thursday</option>
-                <option value="Friday">Friday</option>
-            </select>
-            <div>
-            </div>
-            </div>
-            </div>
-            <div>
-              <button type="submit" className="btn btn-primary" value="Submit">Submit</button>
-            </div>
-=======
 
         {this.state.courses.map((course, idx) => (
 
@@ -241,8 +154,6 @@ class Dashboard extends Component {
 
         ))}
               <button type="submit" className="btn btn-outline btn-xl" value="Submit">Submit</button>
-
->>>>>>> Stashed changes
           </form>
         </section>
     );
