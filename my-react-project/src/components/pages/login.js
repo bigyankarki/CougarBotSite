@@ -15,7 +15,6 @@ class Login extends Component {
       feedback: {
         login: false
       }
-
     };
 
     this.handleFbLogin = this.handleFbLogin.bind(this);
@@ -23,7 +22,6 @@ class Login extends Component {
   }
 
   goto = (page) => {
-    console.log(this.props)
     this.props.history.push(page)
   }
 
@@ -38,7 +36,7 @@ class Login extends Component {
         const res = result.additionalUserInfo.profile;
         const user_db = db.ref(`users/${res.id}`);
         var input = {user: res.first_name, token: token};
-        that.setState({inputs: input});
+        that.setState({inputs: input, feedback: true});
         if(user_db.id){
         }
         else{
@@ -63,10 +61,7 @@ class Login extends Component {
       var credential = error.credential;
       // ...
     });
-
-
   }
-
 
   render() {
     const { username } = this.state;
