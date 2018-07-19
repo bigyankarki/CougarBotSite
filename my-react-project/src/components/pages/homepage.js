@@ -6,7 +6,7 @@ import founder2 from '../../assets/img/founder2.jpg'
 import founder3 from '../../assets/img/founder3.jpg'
 import founder4 from '../../assets/img/founder4.jpg'
 
-class Homepage extends Component {
+export default class Homepage extends Component {
   render() {
     return (
       <div>
@@ -35,74 +35,6 @@ class Homepage extends Component {
         </div>
       </div>
     </header>
-
-    <section className="about bg-primary text-center" id="about">
-    <div className="container">
-      <div className="row">
-        <div className="col-md-12 mx-auto">
-          <h2 className="section-heading">About us</h2>
-          <p>Born as a side project, cougarBot is the brainchild of four curious minds at Caldwell University. With problems like having to check
-              college website for small task such as library hours to getting important notifications in an email, we waste significant amount of our time
-              navigating through proper sources. What if we could solve this problem? As a scholar of Computer Science, we took this responsibility, and built a go-to system
-              as a solution: <strong>CougarBot</strong>.
-          </p>
-        </div>
-      </div>
-        <div className="col-md-12 mx-auto">
-          <div className="row">
-          <div className="col-md-3">
-            <div className="card">
-            <a href="http://www.bigyankarki.com" target="_blank">
-              <img className="card-img-top" src={founder1} alt="Card image cap" />
-              <div className="card-body">
-                <h4>Bigyan Karki</h4>
-                <p className="card-text">Co-founder, full stack developer, AI/ML enthusiast</p>
-              </div>
-            </a>
-            </div>
-          </div>
-
-          <div className="col-md-3">
-            <div className="card">
-            <a href="https://raashul.github.io/portfolio-app/" target="_blank">
-              <img className="card-img-top" src={founder3} alt="Card image cap" />
-              <div className="card-body">
-                <h4>Rashul Rajbhandari</h4>
-                <p className="card-text">Co-founder, full stack developer, Backend engineer</p>
-              </div>
-            </a>
-            </div>
-          </div>
-
-          <div className="col-md-3">
-            <div className="card">
-            <a href="https://www.github.com/dahalaamosh" target="_blank">
-              <img className="card-img-top" src={founder4} alt="Card image cap" />
-              <div className="card-body">
-                <h4>Aamosh Dahal</h4>
-                <p className="card-text">Co-founder, full stack developer, Backend developer</p>
-              </div>
-            </a>
-            </div>
-          </div>
-
-          <div className="col-md-3">
-            <div className="card">
-            <a href="https://github.com/madhusujan" target="_blank">
-              <img className="card-img-top" src={founder2} alt="Card image cap" />
-              <div className="card-body">
-                <h4>Madhu Paudel</h4>
-                <p className="card-text">Co-founder, Front end developer, AI/ML enthusiast</p>
-              </div>
-            </a>
-            </div>
-          </div>
-
-        </div>
-
-        </div>
-    </div>
-  </section>
 
     <section className="features bg-primary text-center" id="features">
       <div className="container">
@@ -166,11 +98,67 @@ class Homepage extends Component {
       </div>
     </section>
 
+
+        <section className="about bg-primary text-center" id="about">
+        <div className="container">
+          <div className="row">
+            <div className="col-md-12 mx-auto">
+              <h2 className="section-heading">About us</h2>
+              <p>Born as a side project, cougarBot is the brainchild of four curious minds at Caldwell University. With problems like having to check
+                  college website for small task such as library hours to getting important notifications in an email, we waste significant amount of our time
+                  navigating through proper sources. What if we could solve this problem? As a scholar of Computer Science, we took this responsibility, and built a go-to system
+                  as a solution: <strong>CougarBot</strong>.
+              </p>
+            </div>
+          </div>
+            <div className="col-md-12 mx-auto">
+              <div className="row">
+              <div className="col-md-4">
+                <div className="card">
+                <a href="http://www.bigyankarki.com" target="_blank">
+                  <img className="card-img-top" src={founder1} alt="Card image cap" />
+                  <div className="card-body">
+                    <h4>Bigyan Karki</h4>
+                    <p className="card-text">Co-founder, full stack developer, AI/ML enthusiast</p>
+                  </div>
+                </a>
+                </div>
+              </div>
+
+              <div className="col-md-4">
+                <div className="card">
+                <a href="https://raashul.github.io/portfolio-app/" target="_blank">
+                  <img className="card-img-top" src={founder3} alt="Card image cap" />
+                  <div className="card-body">
+                    <h4>Rashul Rajbhandari</h4>
+                    <p className="card-text">Co-founder, full stack developer, Backend engineer</p>
+                  </div>
+                </a>
+                </div>
+              </div>
+
+              <div className="col-md-4">
+                <div className="card">
+                <a href="https://www.github.com/dahalaamosh" target="_blank">
+                  <img className="card-img-top" src={founder4} alt="Card image cap" />
+                  <div className="card-body">
+                    <h4>Aamosh Dahal</h4>
+                    <p className="card-text">Co-founder, full stack developer, Backend developer</p>
+                  </div>
+                </a>
+                </div>
+              </div>
+
+            </div>
+
+            </div>
+        </div>
+      </section>
+
+
     </div>
 
 
     );
   }
 }
-
-export default Homepage;
