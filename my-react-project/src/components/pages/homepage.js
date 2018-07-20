@@ -6,14 +6,11 @@ import founder2 from '../../assets/img/founder2.jpg'
 import founder3 from '../../assets/img/founder3.jpg'
 import founder4 from '../../assets/img/founder4.jpg'
 
-import Header from '../headerComponents/header'
-
 
 export default class Homepage extends Component {
   render() {
     return (
       <div>
-      <Header />
       <header className="masthead">
       <div className="container h-100">
         <div className="row h-100">
