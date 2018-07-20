@@ -32,14 +32,12 @@ class Dashboard extends Component {
 
     handleSubmit(event) {
       event.preventDefault();
-      console.log('this.state', this.state);
-      let ref = db.ref('test_courses');
+      let ref = db.ref('user_courses');
       let usersRef = ref.child(this.state.user);
       let indexState = this.state.courses;
       for(var i=0; i<indexState.length; i++){
         let courseName = indexState[i].courseName;
         let day = indexState[i].day;
-        console.log(day);
         let end_time = indexState[i].endTime;
         for(var j=0;j<day.length;j++){
           let actualDay = day[j].toLowerCase();
@@ -62,7 +60,6 @@ class Dashboard extends Component {
         let indexCourse = this.state.courses;
         indexCourse[idx][input] = e.target.value;
         this.setState({courses: indexCourse});
-        console.log(this.state);
       };
     }
 
@@ -84,7 +81,6 @@ class Dashboard extends Component {
         }
         indexCourse[idx][input] = days;
         this.setState({courses: indexCourse});
-        console.log(this.state);
       }
     }
 
