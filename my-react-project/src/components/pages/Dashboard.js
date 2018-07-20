@@ -31,10 +31,9 @@ class Dashboard extends Component {
     }
 
     handleSubmit(event) {
-
       event.preventDefault();
       console.log('this.state', this.state);
-      let ref = db.ref('user_courses');
+      let ref = db.ref('test_courses');
       let usersRef = ref.child(this.state.user);
       let indexState = this.state.courses;
       for(var i=0; i<indexState.length; i++){
@@ -52,6 +51,8 @@ class Dashboard extends Component {
           })
         }
       }
+
+      alert("Thanks, the form has been submitted.");
     }
 
 
@@ -109,7 +110,6 @@ class Dashboard extends Component {
         <form className="form-group dashboard-form" onSubmit={this.handleSubmit}>
 
         {this.state.courses.map((course, idx) => (
-
           <div className="row text-center">
 
                 <div className="form-group">
@@ -148,7 +148,7 @@ class Dashboard extends Component {
                 </div>
                 <div className="form-group">
                   <i onClick={this.handleRemoveCourse(idx)} className="icon-minus"></i>
-                  <i onClick={this.handleAddCourse} className="icon-plus"></i>
+                  {idx == 0 ? <i onClick={this.handleAddCourse} className="icon-plus"></i> : console.log("awesome")}
                 </div>
             </div>
 

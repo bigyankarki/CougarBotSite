@@ -337,6 +337,22 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
   margin-left: 15%;
 }
 
+.icon-plus:hover{
+  color: #1D6AFF;
+  -webkit-transition: all .8s ease-in-out;
+  -ms-transform: rotate(180deg); /* IE 9 */
+  -webkit-transform: rotate(180deg); /* Safari */
+  transform: rotate(180deg);
+}
+
+.icon-minus:hover{
+  color: red;
+  -webkit-transition: all .8s ease-in-out;
+  -ms-transform:rotate(180deg); /* IE 9 */
+  -webkit-transform:rotate(180deg); /* Safari */
+  transform:rotate(180deg);
+}
+
 form {
   margin: auto;
   margin-top: 5%;
@@ -349,8 +365,9 @@ form div {
 
 form button {
   margin-left:30%;
+  margin-top: 5%;
 }
 
-.selectedDayText{
-  color: red;
+.dashboard-form {
+  margin-bottom: 4%;
 }
