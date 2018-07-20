@@ -33,18 +33,19 @@ import Faqs from './components/pages/faqs'
 
 
 ReactDOM.render(<Router>
-  <div className="App">
-    <Header />
-      <div className="content">
+  // <div className="App">
+  //   <Header />
+  //     <div className="content">
+
         <Route exact path='/' component={Homepage} />
         <Route exact path='/login' component={Login} />
         <PrivateRoute exact path = '/dashboard' component={Dashboard} />
         <Route exact path = '/privacy' component={Privacy} />
         <Route exact path = '/terms' component={Terms} />
         <Route exact path = '/faqs' component={Faqs} />
-      </div>
-    <Footer />
-  </div>
+      // </div>
+    // <Footer />
+  // </div>
   </Router>,
 
   document.getElementById('root'));
