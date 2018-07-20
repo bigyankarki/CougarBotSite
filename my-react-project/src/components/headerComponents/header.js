@@ -27,7 +27,7 @@ class Header extends Component {
             </li>
             {isLoggedIn() == true ?
               <li className="nav-item">
-                <a className="nav-link js-scroll-trigger" href="/dashboard">Dashboard</a>
+                <Link className="nav-link js-scroll-trigger" to="/dashboard">Dashboard</Link>
               </li> : null
             }
 
