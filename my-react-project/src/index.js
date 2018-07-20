@@ -2,7 +2,7 @@ import ReactDOM from 'react-dom';
 // import App from './App';
 
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 
 import { PrivateRoute } from './auth';
 
@@ -32,20 +32,18 @@ import Terms from './components/pages/terms'
 import Faqs from './components/pages/faqs'
 
 
-ReactDOM.render(<Router>
-  // <div className="App">
-  //   <Header />
-  //     <div className="content">
+ReactDOM.render(
+  <Router>
 
+  <Switch>
         <Route exact path='/' component={Homepage} />
         <Route exact path='/login' component={Login} />
         <PrivateRoute exact path = '/dashboard' component={Dashboard} />
         <Route exact path = '/privacy' component={Privacy} />
         <Route exact path = '/terms' component={Terms} />
         <Route exact path = '/faqs' component={Faqs} />
-      // </div>
-    // <Footer />
-  // </div>
+
+  </Switch>
   </Router>,
 
   document.getElementById('root'));
