@@ -24,7 +24,6 @@ class ExistingUserForm extends Component {
     }
 
     async componentDidMount(){
-      {/* get existing courses from the database, and save it to the state. */}
       let obj = await db.ref('/user_courses').once('value').then( async function(snapshot) {
         let courses = []
          let course_obj = await snapshot.val();
@@ -43,7 +42,7 @@ class ExistingUserForm extends Component {
 
        for(var i = 0; i < obj.length; i++){
         for(var j = i+1; j < obj.length; j++){
-          if(obj[i].courseName == obj[j].courseName){
+          if(obj[i].courseName === obj[j].courseName){
             obj[i].day.push(obj[j].day[0])
             var index = obj.indexOf(obj[j])
             if(index > -1){

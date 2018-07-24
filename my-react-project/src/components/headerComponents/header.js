@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom';
-import Login from '../pages/login.js'
 
 import SignIn from './SignIn'
 import SignOut from './SignOut.js'
@@ -25,13 +24,13 @@ class Header extends Component {
             <li className="nav-item">
               <a className="nav-link js-scroll-trigger" href="/#features">Features</a>
             </li>
-            {isLoggedIn() == true ?
+            {isLoggedIn() === true ?
               <li className="nav-item">
                 <Link className="nav-link js-scroll-trigger" to="/dashboard">Dashboard</Link>
               </li> : null
             }
 
-            {isLoggedIn() == true ? <SignOut /> : <SignIn />}
+            {isLoggedIn() === true ? <SignOut /> : <SignIn />}
           </ul>
         </div>
       </div>

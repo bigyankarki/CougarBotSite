@@ -11,20 +11,24 @@ class Dashboard extends Component {
     this.state = {
       user: localStorage.getItem('user'),
       userName: localStorage.getItem("userName"),
-      new_user: true
+      existing_user: false
     }
     }
 
     async componentDidMount(){
-      let status = await db.ref('/user_courses').once('value').then( async function(snapshot) {
-         let course_obj = await snapshot.val();
-         let flag = false;
+      let status = await db.ref('/user_courses').once('value').then( function(snapshot) {
+         let course_obj = snapshot.val();
+         let found = false;
          for(var each_user in course_obj){
-           (localStorage.getItem('user') !== each_user) ? flag = true : flag = false;
+           if(localStorage.getItem('user') === each_user){
+             found = true;
+             break;
+           }
          }
-         return flag;
+         return found;
        })
-       this.setState({new_user: status})
+       console.log(status);
+       this.setState({existing_user: status})
     }
 
   // check if user already has data in database, if Yes render to edit it.
@@ -32,9 +36,8 @@ class Dashboard extends Component {
     return (
       <section className="container bg-primary">
         {
-          (this.state.new_user) ? <NewUserForm />: <ExistingUserForm />
+          (this.state.existing_user) ? <ExistingUserForm /> : <NewUserForm />
         }
-
         </section>
     );
   }

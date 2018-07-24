@@ -138,8 +138,8 @@ class NewUserForm extends Component {
                     <input type="text" className="form-control readOnly selectedDayText" value={this.state.courses[idx].day} id="selectedDays" required/>
                   </div>
                   <div className="form-group">
-                    {idx !== 0 ? <i onClick={this.handleRemoveCourse(idx)} className="icon-minus"></i> : console.log("awesome")}
-                    {idx === 0 ? <i onClick={this.handleAddCourse} className="icon-plus"></i> : console.log("awesome")}
+                    {idx !== 0 ? <i onClick={this.handleRemoveCourse(idx)} className="icon-minus"></i> : console.log("Hide Remove button")}
+                    {idx === 0 ? <i onClick={this.handleAddCourse} className="icon-plus"></i> : console.log("Hide add button")}
                   </div>
               </div>
           ))}
