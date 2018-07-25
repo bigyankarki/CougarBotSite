@@ -56,7 +56,7 @@ class Privacy extends Component {
       <div>
         <h3>Facebook permissions asked by this Application</h3>
         <p>This Application may ask for some Facebook permissions allowing it to perform actions with the Users Facebook account and to retrieve information, including Personal Data, from it.</p>
-        <p>For more information about the following permissions, refer to the <a href="https://developers.facebook.com/docs/authentication/permissions/" target="_blank">Facebook permissions documentation</a> and to the <a href="https://www.facebook.com/about/privacy/" target="_blank">Facebook privacy policy</a>.</p>
+        <p>For more information about the following permissions, refer to the <a href="https://developers.facebook.com/docs/authentication/permissions/" target="_blank" rel="noopener noreferrer">Facebook permissions documentation</a> and to the <a href="https://www.facebook.com/about/privacy/" target="_blank" rel="noopener noreferrer">Facebook privacy policy</a>.</p>
         <p>The permissions asked are the following:</p>
         <h4>Basic information</h4>
         <p>By default, this includes certain User&rsquo;s Data such as id, name, picture, gender, and their locale. Certain connections of the User, such as the Friends, are also available. If the User has made more of their Data public, more information will be available.</p>

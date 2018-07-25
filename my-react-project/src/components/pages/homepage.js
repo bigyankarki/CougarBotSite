@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import demoscreen from '../../assets/img/demo-screen.jpg'
 
 import founder1 from '../../assets/img/founder1.jpg'
-import founder2 from '../../assets/img/founder2.jpg'
 import founder3 from '../../assets/img/founder3.jpg'
 import founder4 from '../../assets/img/founder4.jpg'
+
 
 export default class Homepage extends Component {
   render() {
@@ -24,7 +24,7 @@ export default class Homepage extends Component {
               <div className="device-mockup iphone6_plus potrait white">
                 <div className="device">
                   <div className="screen">
-                    <img src={demoscreen} className="img-fluid" alt="" />
+                    <img src={demoscreen} className="img-fluid" alt="Mockup iphone" />
                   </div>
                   <div className="button">
                   </div>
@@ -115,8 +115,8 @@ export default class Homepage extends Component {
               <div className="row">
               <div className="col-md-4">
                 <div className="card">
-                <a href="http://www.bigyankarki.com" target="_blank">
-                  <img className="card-img-top" src={founder1} alt="Card image cap" />
+                <a href="http://www.bigyankarki.com" target="_blank" rel="noopener noreferrer">
+                  <img className="card-img-top" src={founder1} alt="Bigyan Karki"/>
                   <div className="card-body">
                     <h4>Bigyan Karki</h4>
                     <p className="card-text">Co-founder, full stack developer, AI/ML enthusiast</p>
@@ -127,8 +127,8 @@ export default class Homepage extends Component {
 
               <div className="col-md-4">
                 <div className="card">
-                <a href="https://raashul.github.io/portfolio-app/" target="_blank">
-                  <img className="card-img-top" src={founder3} alt="Card image cap" />
+                <a href="https://raashul.github.io/portfolio-app/" target="_blank" rel="noopener noreferrer">
+                  <img className="card-img-top" alt="Rashul Rajbhandari" src={founder3}   />
                   <div className="card-body">
                     <h4>Rashul Rajbhandari</h4>
                     <p className="card-text">Co-founder, full stack developer, Backend engineer</p>
@@ -139,8 +139,8 @@ export default class Homepage extends Component {
 
               <div className="col-md-4">
                 <div className="card">
-                <a href="https://www.github.com/dahalaamosh" target="_blank">
-                  <img className="card-img-top" src={founder4} alt="Card image cap" />
+                <a href="https://www.github.com/dahalaamosh" target="_blank" rel="noopener noreferrer">
+                  <img className="card-img-top" src={founder4} alt="Aamosh Dahal"/>
                   <div className="card-body">
                     <h4>Aamosh Dahal</h4>
                     <p className="card-text">Co-founder, full stack developer, Backend developer</p>

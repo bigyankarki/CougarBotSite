@@ -332,6 +332,7 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 }
 
 .icon-plus, .icon-minus{
+  display: inline-block;
   font-size: 30px;
   cursor: pointer;
   margin-left: 15%;
@@ -339,18 +340,18 @@ footer ul li a:hover, footer ul li a:focus, footer ul li a:active, footer ul li 
 
 .icon-plus:hover{
   color: #1D6AFF;
-  -webkit-transition: all .8s ease-in-out;
   -ms-transform: rotate(180deg); /* IE 9 */
   -webkit-transform: rotate(180deg); /* Safari */
   transform: rotate(180deg);
+  -webkit-transition: all .8s ease-in-out;
 }
 
 .icon-minus:hover{
   color: red;
-  -webkit-transition: all .8s ease-in-out;
   -ms-transform:rotate(180deg); /* IE 9 */
   -webkit-transform:rotate(180deg); /* Safari */
   transform:rotate(180deg);
+  -webkit-transition: all .8s ease-in-out;
 }
 
 form {
@@ -369,5 +370,5 @@ form button {
 }
 
 .dashboard-form {
-  margin-bottom: 4%;
+  margin-bottom: 6%;
 }
