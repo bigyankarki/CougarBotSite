@@ -55,8 +55,17 @@ class ExistingUserForm extends Component {
     }
 
 
-  handleSubmit(event) {
+  async handleSubmit(event) {
     event.preventDefault();
+    await db.ref('/user_courses').once('value').then(function(snapshot) {
+       let course_obj = snapshot.val();
+       for(var each_user in course_obj){
+         if(localStorage.getItem('user') === each_user){
+           db.ref('/user_courses' + '/' + localStorage.getItem('user')).remove()
+         }
+       }
+     })
+
     let ref = db.ref('user_courses');
     let usersRef = ref.child(this.state.user);
     let indexState = this.state.courses;
