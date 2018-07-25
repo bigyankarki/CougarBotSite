@@ -84,7 +84,7 @@ class ExistingUserForm extends Component {
       }
     }
 
-    alert("Thanks, the form has been submitted.");
+    alert("Thanks, your homework has been updated.");
   }
 
 
@@ -137,7 +137,7 @@ class ExistingUserForm extends Component {
     return (
       <div>
           <h1>Welcome back, {this.state.userName}.</h1>
-          <p>Please update the form to the best of your knowledge. </p>
+          <p>Update your courses below. However, please note that updating this form will wipe your previous homework records.</p>
           <form className="form-group dashboard-form" onSubmit={this.handleSubmit}>
 
           {this.state.courses.map((course, idx) => (
