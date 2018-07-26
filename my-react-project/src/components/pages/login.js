@@ -39,7 +39,8 @@ class Login extends Component {
         const res = result.additionalUserInfo.profile;
 
         const psId = await that.getUserPSID(res.id);
-        const PSID = psId.data[0].id;
+
+        const PSID = psId.data[1].id; {/* should be psId.data[0].id for test bot*/}
 
         const user_db = db.ref(`users/${PSID}`);
 
@@ -54,7 +55,6 @@ class Login extends Component {
             email: res.email
           })
         }
-
         localStorage.setItem("user", PSID);
         localStorage.setItem("userName", res.first_name);
         that.goto('/dashboard');
@@ -74,7 +74,7 @@ class Login extends Component {
 
   getUserPSID =  (sender_asid) => {
     console.log('inside the fucntion');
-    let url = `https://graph.facebook.com/v3.0/${sender_asid}/ids_for_pages?&access_token=${firebase_config.APP_ACCESS_TOCKEN_COUGARBOT_TEST1}`
+    let url = `https://graph.facebook.com/v3.0/${sender_asid}/ids_for_pages?&access_token=${firebase_config.APP_ACCESS_TOKEN_COUGARBOT}`
     return new Promise(function(resolve, reject){
       request({
         url : url,
