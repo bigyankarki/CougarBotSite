@@ -44,7 +44,7 @@ class NewUserForm extends Component {
       }
     }
 
-    alert("Thanks, the form has been submitted.");
+    alert("Thanks, your homework details has been recieved.");
   }
 
 
