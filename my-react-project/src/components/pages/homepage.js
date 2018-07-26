@@ -104,7 +104,7 @@ export default class Homepage extends Component {
           <div className="row">
             <div className="col-md-12 mx-auto">
               <h2 className="section-heading">About us</h2>
-              <p>Born as a side project, cougarBot is the brainchild of four curious minds at Caldwell University. With problems like having to check
+              <p>Born as a side project, cougarBot is the brainchild of three curious minds at Caldwell University. With problems like having to check
                   college website for small task such as library hours to getting important notifications in an email, we waste significant amount of our time
                   navigating through proper sources. What if we could solve this problem? As a scholar of Computer Science, we took this responsibility, and built a go-to system
                   as a solution: <strong>CougarBot</strong>.
