@@ -30,6 +30,7 @@ import Dashboard from './components/pages/Dashboard'
 import Privacy from './components/pages/privacy'
 import Terms from './components/pages/terms'
 import Faqs from './components/pages/faqs'
+import Demo from './components/pages/Demo';
 
 
 ReactDOM.render(<Router>
@@ -42,6 +43,7 @@ ReactDOM.render(<Router>
         <Route exact path = '/privacy' component={Privacy} />
         <Route exact path = '/terms' component={Terms} />
         <Route exact path = '/faqs' component={Faqs} />
+        <Route exact path = '/demo' component={Demo} />
       </div>
     <Footer />
   </div>

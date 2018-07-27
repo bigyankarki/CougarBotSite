@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import demoscreen from '../../assets/img/demo-screen.jpg'
+import demoscreen from '../../assets/homepage_gif/homepage.gif'
 
 import founder1 from '../../assets/img/founder1.jpg'
 import founder3 from '../../assets/img/founder3.jpg'
@@ -17,6 +17,9 @@ export default class Homepage extends Component {
             <div className="header-content mx-auto">
               <h1 className="mb-5">Caldwell University Smart Assistant. The solution to your ever existing college problems. Come, say hi to CougarBot.</h1>
               <a href="https://m.me/CUcougarbot" className="btn btn-outline btn-xl">Say hi to CougarBot</a>
+
+              <a href="/demo" className="btn btn-outline btn-xl" style={{marginLeft: '10px'}}>Watch Demo</a>
+
             </div>
           </div>
           <div className="col-lg-5 my-auto">
@@ -24,7 +27,7 @@ export default class Homepage extends Component {
               <div className="device-mockup iphone6_plus potrait white">
                 <div className="device">
                   <div className="screen">
-                    <img src={demoscreen} className="img-fluid" alt="Mockup iphone" />
+                    <img src={demoscreen} className="img-fluid" alt="Mockup iphone" style={{height: '100%', width: '100%'}}/>
                   </div>
                   <div className="button">
                   </div>
@@ -35,6 +38,8 @@ export default class Homepage extends Component {
         </div>
       </div>
     </header>
+
+      <hr />
 
     <section className="features bg-primary text-center" id="features">
       <div className="container">
@@ -98,17 +103,19 @@ export default class Homepage extends Component {
       </div>
     </section>
 
+    <hr />
+
 
         <section className="about bg-primary text-center" id="about">
         <div className="container">
           <div className="row">
             <div className="col-md-12 mx-auto">
               <h2 className="section-heading">About us</h2>
-              <p>Born as a side project, cougarBot is the brainchild of three curious minds at Caldwell University. With problems like having to check
+              {/* <p>Born as a side project, cougarBot is the brainchild of three curious minds at Caldwell University. With problems like having to check
                   college website for small task such as library hours to getting important notifications in an email, we waste significant amount of our time
                   navigating through proper sources. What if we could solve this problem? As a scholar of Computer Science, we took this responsibility, and built a go-to system
                   as a solution: <strong>CougarBot</strong>.
-              </p>
+              </p> */}
             </div>
           </div>
             <div className="col-md-12 mx-auto">
@@ -119,7 +126,7 @@ export default class Homepage extends Component {
                   <img className="card-img-top" src={founder1} alt="Bigyan Karki"/>
                   <div className="card-body">
                     <h4>Bigyan Karki</h4>
-                    <p className="card-text">Co-founder, full stack developer, AI/ML enthusiast</p>
+                    <p className="card-text">Co-founder</p>
                   </div>
                 </a>
                 </div>
@@ -131,7 +138,7 @@ export default class Homepage extends Component {
                   <img className="card-img-top" alt="Rashul Rajbhandari" src={founder3}   />
                   <div className="card-body">
                     <h4>Rashul Rajbhandari</h4>
-                    <p className="card-text">Co-founder, full stack developer, Backend engineer</p>
+                    <p className="card-text">Co-founder</p>
                   </div>
                 </a>
                 </div>
@@ -143,7 +150,7 @@ export default class Homepage extends Component {
                   <img className="card-img-top" src={founder4} alt="Aamosh Dahal"/>
                   <div className="card-body">
                     <h4>Aamosh Dahal</h4>
-                    <p className="card-text">Co-founder, full stack developer, Backend developer</p>
+                    <p className="card-text">Co-founder</p>
                   </div>
                 </a>
                 </div>
