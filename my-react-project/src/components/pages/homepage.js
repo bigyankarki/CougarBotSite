@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import demoscreen from '../../assets/homepage_gif/homepage.gif'
+import demoscreen from '../../assets/homepage_gif/homepage.MP4'
 
 import founder1 from '../../assets/img/founder1.jpg'
 import founder3 from '../../assets/img/founder3.jpg'
